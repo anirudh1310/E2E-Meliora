@@ -1,0 +1,899 @@
+Datatypes Assignment
+
+1.                                                                                          
+using System;
+
+namespace Application                                                                                     
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("enter the side of the square"); 
+      int i=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("The area of a square is:{0}", i*i);
+    }
+  }
+}
+
+2.
+using System;
+
+namespace Application
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int d,a,i,l;
+      d=a=i=0;
+      Console.WriteLine("Enter the string");
+      string s=Console.ReadLine();
+      l=s.Length;
+      while(i<l){
+          if((s[i]>='a'&& s[i]<='z')||(s[i]>='A'&& s[i]<='Z')){
+              a++;
+          }
+          else if(s[i]>='0'&& s[i]<='9'){
+              d++;
+          }
+          i++;
+      }
+      Console.WriteLine("The no.of alphabets in the given string {0}",a);
+      Console.WriteLine("The no.of digits in the given string {0}",d);
+      
+    }
+  }
+}
+
+3.using System;
+public class Strings
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the string:");
+        string str = Console.ReadLine();
+        string incrementedStr = "";
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            incrementedStr += (char)(str[i] + 1);
+        }
+        
+        Console.WriteLine("Incremented string: " + incrementedStr.ToUpper());
+        Console.WriteLine("Incremented string: " + incrementedStr.ToLower());
+   }
+}
+   
+4.
+using System;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the string:");
+        string str = Console.ReadLine();
+        char[] arr=str.ToCharArray();
+        Array.Reverse(arr);
+        string newstr=new String(arr);
+        Console.WriteLine("REV STR:" +newstr);
+        if (str.Length>1){
+            string substr=str.Substring(1);
+            Console.WriteLine("The substring:"+substr);
+        }
+        else{
+            Console.WriteLine("not possible");
+        }
+        Console.WriteLine("Enter the characte to replace");
+        char newchar=Console.ReadLine()[0];
+        string restr=str.Replace(newchar,'$');
+        Console.WriteLine("After replacing:" +restr);
+        string copystr=new string(str);
+        string instr=copystr.Insert(1,"h");
+        
+        Console.WriteLine("Original string: " + str);
+        Console.WriteLine("Modified string: " + instr.ToUpper());
+    }
+} 
+
+OPERATORS
+
+using System;
+public class Operators
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("enter number 1");
+        int num1=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter number 2");
+        int num2=Convert.ToInt32(Console.ReadLine());
+        num2=++num1;
+        Console.WriteLine("After preincrementing:{0}",num2);
+        num2=num1++;
+        Console.WriteLine("After postincrementing:{0}",num2);
+    }
+}
+
+
+Control Statements
+
+1.using System; 
+public class Control
+{
+    public static void Main(string[] args)
+    {
+        int i=0;
+        while(i<3){
+            Console.WriteLine("enter username");
+            string username=Console.ReadLine();
+            Console.WriteLine("enter password");
+            string password=Console.ReadLine();
+            if(username=="purva" && password=="purva2709"){
+                Console.WriteLine("you are logged in successfully");
+                break;
+            }
+            else{
+                Console.WriteLine("wrong!!!");
+            }i++;
+        }
+    }
+}
+ 
+
+2. using System;
+   public class Control
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the first number (num1):");
+        string num1 = Console.ReadLine();
+        Console.WriteLine("Enter the second number (num2):");
+        char num2 = Console.ReadLine()[0];
+        int position = num1.LastIndexOf(num2);
+                      if (position == -1)
+        {
+            Console.WriteLine($"The digit {num2} is not present in the number {num1}.");
+        }
+        else
+        {
+            string positionName = GetPositionName(num1.Length - 1 - position);
+            Console.WriteLine($"The digit {num2} is in the {positionName} place of the number {num1}.");
+        }
+    }
+    public static string GetPositionName(int position)
+    {
+        switch (position)
+        {
+            case 0: return "ones";
+            case 1: return "tens";
+            case 2: return "hundreds";
+            case 3: return "thousands";
+            case 4: return "ten thousands";
+            case 5: return "hundred thousands";
+            case 6: return "millions";
+            default: return $"{position + 1}th place";
+        }
+    }
+}
+
+ARRAYS
+
+1. using System;
+public class Array
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("The no. of elements in the array:");
+        int c=0;
+        int[] arr={10,20,30,40};
+        foreach(int element in arr){
+            c=c+1;
+        }
+        Console.WriteLine(c);
+    }
+}
+
+2. using System;
+public class Arrays
+{
+    public static void Main(string[] args)
+    {
+        int sum=0;
+        int[] array = new int[4];
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine("Enter element:");
+            array[i] = int.Parse(Console.ReadLine());
+        }
+        Array.Sort(array);
+        Console.WriteLine("The array in descending order is:");
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            Console.Write(array[i] + " ");
+        }
+        Console.WriteLine("\nThe minimum element:{0}" ,array[0]);
+        Console.WriteLine("The maximum element:{0}" ,array[array.Length-1]);
+        foreach(int ele in array){
+            sum+=ele;
+        }
+        Console.WriteLine("The sum of elements:{0}" ,sum);
+    }
+}
+
+OOPS
+
+1.using System;
+public class Employee
+{
+    public string EmployeeName { get; set; }
+    public decimal BasicSalary { get; set; }
+    public decimal HRA { get;  set; }
+    public decimal DA { get;  set; }
+    public decimal GrossPay { get;  set; }
+    public decimal Tax { get; set; }
+    public decimal NetSalary { get; set; }
+
+    public Employee(string employeeName, decimal basicSalary)
+    {
+        EmployeeName = employeeName;
+        BasicSalary = basicSalary;
+    }
+
+    public void CalculateSalaryComponents()
+    {
+        HRA = BasicSalary * 0.15m;  
+        DA = BasicSalary * 0.10m;  
+        GrossPay = BasicSalary + HRA + DA;
+        Tax = GrossPay * 0.08m;   
+        NetSalary = GrossPay - Tax;
+    }
+
+    public void DisplaySalaryStructure()
+    {
+        Console.WriteLine($"Employee Name: {EmployeeName}");
+        Console.WriteLine($"Basic Salary: {BasicSalary:C}");
+        Console.WriteLine($"HRA: {HRA:C}");
+        Console.WriteLine($"DA: {DA:C}");
+        Console.WriteLine($"Gross Pay: {GrossPay:C}");
+        Console.WriteLine($"Tax: {Tax:C}");
+        Console.WriteLine($"Net Salary: {NetSalary:C}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Employee employee = new Employee("John Doe", 50000m);
+        employee.CalculateSalaryComponents();
+        employee.DisplaySalaryStructure();
+    }
+}
+
+
+
+2.using System;
+
+public class Stock
+{
+    public string StockName { get; set; }
+    public string StockSymbol { get; set; }
+    public double PreviousClosingPrice { get; set; }
+    public double CurrentClosingPrice { get; set; }
+
+    public Stock(string stockName, string stockSymbol, double previousClosingPrice, double currentClosingPrice)
+    {
+        StockName = stockName;
+        StockSymbol = stockSymbol;
+        PreviousClosingPrice = previousClosingPrice;
+        CurrentClosingPrice = currentClosingPrice;
+    }
+
+    public double GetChangePercentage()
+    {
+        if (PreviousClosingPrice == 0)
+        {
+            throw new InvalidOperationException("Previous closing price cannot be zero.");
+        }
+        return ((CurrentClosingPrice - PreviousClosingPrice) / PreviousClosingPrice) * 100;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Stock st = new Stock("Apple", "AAPL", 1500.00, 1600.00);
+        double changePercentage = st.GetChangePercentage();
+        Console.WriteLine($"Change Percentage: {changePercentage:F2}%");
+    }
+}
+
+
+3.using System;
+class RandomHelper
+{
+	public static int RandInt(int start, int end)
+    {
+		var rand = new Random();
+		return rand.Next(start, end);
+	}
+
+
+	public static double RandDouble(double start, double end)
+	{
+		var rand = new Random();
+		return rand.NextDouble() * end + start;
+	}
+}
+class Program
+{
+	static void Main(String[] args)
+	{
+        Console.WriteLine(RandomHelper.RandDouble(RandomHelper.RandInt(1, 10), RandomHelper.RandInt(1, 10)));
+	}
+}
+
+Inheritance
+
+1.using system;
+public class Person{
+    private string FirstName;
+    private string LastName;
+    private string EmailAddress;
+    private DateTime DateofBirth;
+    public Person(string firstName,string lastName,string emailAddress,DateTime dateofBirth){
+        FirstName=firstName;
+        LastName=lastName;
+        EmailAddress=emailAddress;
+        DateofBirth=dateofBirth;
+    }
+    public bool IsAdult
+    {
+
+        get
+        {
+            return (DateTime.Now - dateofbirth).TotalDays / 365 >= 18;
+        }
+    }
+    public string SunSign
+    {
+        get
+        {
+            int month = dateofbirth.Month;
+            int day = dateofbirth.Day;
+            if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
+                return "Aries";
+            if ((month == 4 && day >= 20) || (month == 5 && day <= 20))
+                return "Taurus";
+            if ((month == 5 && day >= 21) || (month == 6 && day <= 20))
+                return "Gemini";
+            if ((month == 6 && day >= 21) || (month == 7 && day <= 22))
+                return "Cancer";
+            if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
+                return "Leo";
+            if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
+                return "Virgo";
+            if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
+                return "Libra";
+            if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
+                return "Scorpio";
+            if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
+                return "Sagittarius";
+            if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
+                return "Capricorn";
+            if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
+                return "Aquarius";
+            if ((month == 2 && day >= 19) || (month == 3 && day <= 20))
+                return "Pisces";
+            return string.Empty;
+        }
+    }
+
+    public bool IsBirthday
+    {
+        get
+        {
+            return DateTime.Now.Month == dateofbirth.Month && DateTime.Now.Day == dateofbirth.Day;
+        }
+    }
+
+    public string ScreenName
+    {
+        get
+        {
+            return $"{_firstname.ToLower()}.{_lastname.ToLower()}";
+        }
+    }
+}
+
+public class Employee : Person
+{
+    private double salary;
+
+    public Employee(string firstname, string lastname, string emailaddress, DateTime dateofbirth, double salary)
+        : base(firstname, lastname, emailaddress, dateofbirth)
+    {
+        salary = salary;
+    }
+
+    public double Salary
+    {
+        get { return salary; }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Employee employee = new Employee("John", "Doe", "john.doe@example.com", new DateTime(1990, 5, 15), 50000);
+        
+        Console.WriteLine($"Screenname: {employee.ScreenName}");
+        Console.WriteLine($"Is Adult: {employee.IsAdult}");
+        Console.WriteLine($"Sun Sign: {employee.SunSign}");
+        Console.WriteLine($"Is Birthday: {employee.IsBirthday}");
+        Console.WriteLine($"Salary: {employee.Salary}");
+    }
+}
+
+2.using System;
+
+public interface IPayable
+{
+    double CalculatePay();
+}
+
+public class Person
+{
+    private string firstName;
+    private string lastName;
+    private string emailAddress;
+    private DateTime dateOfBirth;
+
+    public Person(string firstName, string lastName, string emailAddress, DateTime dateOfBirth)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public bool IsAdult
+    {
+        get
+        {
+            return (DateTime.Now - dateOfBirth).TotalDays / 365 >= 18;
+        }
+    }
+
+    public string SunSign
+    {
+        get
+        {
+            int month = dateOfBirth.Month;
+            int day = dateOfBirth.Day;
+            if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
+                return "Aries";
+            if ((month == 4 && day >= 20) || (month == 5 && day <= 20))
+                return "Taurus";
+            if ((month == 5 && day >= 21) || (month == 6 && day <= 20))
+                return "Gemini";
+            if ((month == 6 && day >= 21) || (month == 7 && day <= 22))
+                return "Cancer";
+            if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
+                return "Leo";
+            if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
+                return "Virgo";
+            if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
+                return "Libra";
+            if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
+                return "Scorpio";
+            if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
+                return "Sagittarius";
+            if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
+                return "Capricorn";
+            if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
+                return "Aquarius";
+            if ((month == 2 && day >= 19) || (month == 3 && day <= 20))
+                return "Pisces";
+            return string.Empty;
+        }
+    }
+
+    public bool IsBirthday
+    {
+        get
+        {
+            return DateTime.Now.Month == dateOfBirth.Month && DateTime.Now.Day == dateOfBirth.Day;
+        }
+    }
+
+    public string ScreenName
+    {
+        get
+        {
+            return $"{firstName.ToLower()}.{lastName.ToLower()}";
+        }
+    }
+}
+
+public class Employee : Person, IPayable
+{
+    protected double salary;
+
+    public Employee(string firstName, string lastName, string emailAddress, DateTime dateOfBirth, double salary)
+        : base(firstName, lastName, emailAddress, dateOfBirth)
+    {
+        this.salary = salary;
+    }
+
+    public double Salary
+    {
+        get { return salary; }
+    }
+
+    public virtual double CalculatePay()
+    {
+        return salary;
+    }
+}
+
+public class HourlyEmployee : Person, IPayable
+{
+    private double hoursWorked;
+    private double payPerHour;
+
+    public HourlyEmployee(string firstName, string lastName, string emailAddress, DateTime dateOfBirth, double hoursWorked, double payPerHour)
+        : base(firstName, lastName, emailAddress, dateOfBirth)
+    {
+        this.hoursWorked = hoursWorked;
+        this.payPerHour = payPerHour;
+    }
+
+    public double HoursWorked
+    {
+        get { return hoursWorked; }
+        set { hoursWorked = value; }
+    }
+
+    public double PayPerHour
+    {
+        get { return payPerHour; }
+        set { payPerHour = value; }
+    }
+
+    public double TotalPay
+    {
+        get { return hoursWorked * payPerHour; }
+    }
+
+    public double CalculatePay()
+    {
+        return TotalPay;
+    }
+}
+
+public class PermanentEmployee : Person, IPayable
+{
+    private double hra;
+    private double da;
+    private double tax;
+    private double totalPay;
+
+    public PermanentEmployee(string firstName, string lastName, string emailAddress, DateTime dateOfBirth, double hra, double da, double tax)
+        : base(firstName, lastName, emailAddress, dateOfBirth)
+    {
+        this.hra = hra;
+        this.da = da;
+        this.tax = tax;
+        CalculateTotalPay();
+    }
+
+    public double HRA
+    {
+        get { return hra; }
+        set { hra = value; CalculateTotalPay(); }
+    }
+
+    public double DA
+    {
+        get { return da; }
+        set { da = value; CalculateTotalPay(); }
+    }
+
+    public double Tax
+    {
+        get { return tax; }
+        set { tax = value; CalculateTotalPay(); }
+    }
+
+    public double TotalPay
+    {
+        get { return totalPay; }
+    }
+
+    private void CalculateTotalPay()
+    {
+        totalPay = hra + da - tax;
+    }
+
+    public double CalculatePay()
+    {
+        return TotalPay;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Employee employee = new Employee("John", "Doe", "john.doe@example.com", new DateTime(1990, 5, 15), 50000);
+        Console.WriteLine($"Screenname: {employee.ScreenName}");
+        Console.WriteLine($"Is Adult: {employee.IsAdult}");
+        Console.WriteLine($"Sun Sign: {employee.SunSign}");
+        Console.WriteLine($"Is Birthday: {employee.IsBirthday}");
+        Console.WriteLine($"Salary: {employee.Salary}");
+        Console.WriteLine($"Calculated Pay: {employee.CalculatePay()}");
+
+        HourlyEmployee hourlyEmployee = new HourlyEmployee("Jane", "Smith", "jane.smith@example.com", new DateTime(1985, 8, 10), 160, 25);
+        Console.WriteLine($"\nHourly Employee:");
+        Console.WriteLine($"Screenname: {hourlyEmployee.ScreenName}");
+        Console.WriteLine($"Is Adult: {hourlyEmployee.IsAdult}");
+        Console.WriteLine($"Sun Sign: {hourlyEmployee.SunSign}");
+        Console.WriteLine($"Is Birthday: {hourlyEmployee.IsBirthday}");
+        Console.WriteLine($"Hours Worked: {hourlyEmployee.HoursWorked}");
+        Console.WriteLine($"Pay Per Hour: {hourlyEmployee.PayPerHour}");
+        Console.WriteLine($"Total Pay: {hourlyEmployee.TotalPay}");
+        Console.WriteLine($"Calculated Pay: {hourlyEmployee.CalculatePay()}");
+
+        PermanentEmployee permanentEmployee = new PermanentEmployee("Alice", "Brown", "alice.brown@example.com", new DateTime(1975, 3, 20), 2000, 1500, 500);
+        Console.WriteLine($"\nPermanent Employee:");
+        Console.WriteLine($"Screenname: {permanentEmployee.ScreenName}");
+        Console.WriteLine($"Is Adult: {permanentEmployee.IsAdult}");
+        Console.WriteLine($"Sun Sign:");
+    }
+}
+
+polymorphism
+
+1.using system;
+namespace CompileTimePolymorphism
+{
+    class Program
+    {
+        static double CalculateArea(double radius)
+        {
+            return radius * radius;
+        }
+        static double CalculateArea(double length, double width)
+        {
+            return length * width;
+        }
+        static double CalculateArea(double baseLength, double height, bool isTriangle)
+        {
+            if (isTriangle)
+            {
+                return 0.5 * baseLength * height;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid argument for triangle calculation");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            double circleRadius = 5.0;
+            double circleArea = CalculateArea(circleRadius);
+            Console.WriteLine($"Area of the circle with radius {circleRadius} is {circleArea}");
+
+            double rectangleLength = 10.0;
+            double rectangleWidth = 5.0;
+            double rectangleArea = CalculateArea(rectangleLength, rectangleWidth);
+            Console.WriteLine($"Area of the rectangle with length {rectangleLength} and width {rectangleWidth} is {rectangleArea}");
+
+            double triangleBase = 8.0;
+            double triangleHeight = 6.0;
+            double triangleArea = CalculateArea(triangleBase, triangleHeight, true);
+            Console.WriteLine($"Area of the triangle with base {triangleBase} and height {triangleHeight} is {triangleArea}");
+        }
+    }
+}
+
+2.using System;
+
+namespace CompileTimePolymorphism
+{
+    class MathOperations
+    {
+       
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+
+        public int Add(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+     
+        public int Multiply(int a, int b)
+        {
+            return a * b;
+        }
+
+
+        public int Multiply(int a, int b, int c)
+        {
+            return a * b * c;
+        }
+
+
+        public int Subtract(int a, int b)
+        {
+            return a - b;
+        }
+
+
+        public int Subtract(int a, int b, int c)
+        {
+            return a - b - c;
+        }
+
+
+        public double Divide(int a, int b)
+        {
+            if (b == 0)
+            {
+                throw new DivideByZeroException("Division by zero is not allowed.");
+            }
+            return (double)a / b;
+        }
+
+
+        public double Divide(int a, int b, int c)
+        {
+            if (b == 0 || c == 0)
+            {
+                throw new DivideByZeroException("Division by zero is not allowed.");
+            }
+            return (double)a / b / c;
+        }
+
+
+        public int ReturnMethod(int a)
+        {
+            return a;
+        }
+
+        static void Main(string[] args)
+        {
+            MathOperations mathOps = new MathOperations();
+
+            Console.WriteLine("Add 2 and 3: " + mathOps.Add(2, 3)); // 5
+            Console.WriteLine("Add 1, 2 and 3: " + mathOps.Add(1, 2, 3)); // 6
+
+            Console.WriteLine("Multiply 2 and 3: " + mathOps.Multiply(2, 3)); // 6
+            Console.WriteLine("Multiply 1, 2 and 3: " + mathOps.Multiply(1, 2, 3)); // 6
+
+            Console.WriteLine("Subtract 5 and 3: " + mathOps.Subtract(5, 3)); // 2
+            Console.WriteLine("Subtract 5, 3 and 1: " + mathOps.Subtract(5, 3, 1)); // 1
+
+
+            Console.WriteLine("Divide 6 by 3: " + mathOps.Divide(6, 3)); // 2.0
+            Console.WriteLine("Divide 12 by 3 by 2: " + mathOps.Divide(12, 3, 2)); // 2.0
+
+            Console.WriteLine("ReturnMethod 7: " + mathOps.ReturnMethod(7)); // 7
+        }
+    }
+}
+
+
+=======================================================================================
+
+
+1.using System;
+using System.Collections;
+
+public class Employee
+{
+    public string EmployeeName { get; set; }
+    public int EmployeeID { get; set; }
+    public double Salary { get; set; }
+
+    public Employee(string employeeName, int employeeID, double salary)
+    {
+        EmployeeName = employeeName;
+        EmployeeID = employeeID;
+        Salary = salary;
+    }
+}
+
+public class EmployeeDAL
+{
+    private ArrayList employees;
+
+    public EmployeeDAL()
+    {
+        employees = new ArrayList();
+    }
+
+    public bool AddEmployee(Employee e)
+    {
+        if (e != null)
+        {
+            employees.Add(e);
+            return true;
+        }
+        return false;
+    }
+
+    public bool DeleteEmployee(int id)
+    {
+        foreach (Employee e in employees)
+        {
+            if (e.EmployeeID == id)
+            {
+                employees.Remove(e);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public string SearchEmployee(int id)
+    {
+        foreach (Employee e in employees)
+        {
+            if (e.EmployeeID == id)
+            {
+                return e.EmployeeName;
+            }
+        }
+        return null;
+    }
+
+    public Employee[] GetAllEmployees()
+    {
+        return (Employee[])employees.ToArray(typeof(Employee));
+    }
+}
+
+public class TestProgram
+{
+    public static void Main()
+    {
+        EmployeeDAL employeeDAL = new EmployeeDAL();
+
+        Employee emp1 = new Employee("raj", 1, 50000);
+        Employee emp2 = new Employee("rani", 2, 60000);
+        Employee emp3 = new Employee("veena", 3, 55000);
+
+        employeeDAL.AddEmployee(emp1);
+        employeeDAL.AddEmployee(emp2);
+        employeeDAL.AddEmployee(emp3);
+
+        string employeeName = employeeDAL.SearchEmployee(2);
+        Console.WriteLine("Search Result for EmployeeID 2: " + employeeName);
+        Employee[] employees = employeeDAL.GetAllEmployees();
+        Console.WriteLine("All Employees:");
+        foreach (Employee e in employees)
+        {
+            Console.WriteLine($"ID: {e.EmployeeID}, Name: {e.EmployeeName}, Salary: {e.Salary}");
+        }
+
+        bool isDeleted = employeeDAL.DeleteEmployee(2);
+        Console.WriteLine("Employee with ID 2 deleted: " + isDeleted);
+
+        employees = employeeDAL.GetAllEmployees();
+        Console.WriteLine("All Employees after deletion:");
+        foreach (Employee e in employees)
+        {
+            Console.WriteLine($"ID: {e.EmployeeID}, Name: {e.EmployeeName}, Salary: {e.Salary}");
+        }
+    }
+}
+

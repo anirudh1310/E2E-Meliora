@@ -1,0 +1,518 @@
+<html>
+<head>
+   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="main.css">-->
+  <!--<title>Welcome to complaint system</title>
+  		
+		<script>
+			function myfun()
+			{
+				var guidebutton=document.getElementById("butn");
+				var guidelines=document.getElementById('guidelines');
+				if(guidebutton.value=="Click to see guidelines")
+				{
+				
+					guidelines.style.display='block';
+					guidebutton.value='Click to Hide guidelines';
+				}
+				else if(guidebutton.value=="Click to Hide guidelines")
+				{
+			
+					guidelines.style.display='none';
+					guidebutton.value='Click to see guidelines';
+				}
+			}
+		</script>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>   
+			function regfun() {   
+				window.location.href = "usertype.html"; 
+			}
+			function scrollToSection(sectionId) {
+				const section = document.getElementById(sectionId);
+				if (section) {
+					section.scrollIntoView({ behavior: "smooth" });
+				}
+			}   
+			</script> 
+	
+  </head>
+  <style>
+       
+	body {
+		font-family: 'Times New Roman', Times, serif;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center; 
+		align-items: center;
+		background-color:white;
+	}
+	
+	
+	.top-frame {
+		/* background: linear-gradient(to bottom left, #cfcf09,rgb(238, 19, 180)); */
+		background:black;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height:7%;
+		background-color:black;
+		color: #fff;
+		padding: 10px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 2; 
+		
+	}
+	.top-frame a{
+		border-bottom: 3px solid transparent;
+		transition: border-bottom 0.3s ease;
+	}
+	.top-frame a:hover {
+		border-bottom: 2px solid orangered;
+		border-radius: 2px;
+	}
+	.menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	.menu a {
+		color:whitesmoke;
+		text-decoration: none;
+		position: relative;
+		padding: 0 15px; 
+		font-family:Georgia, 'Times New Roman', Times, serif;
+	}
+	.menu a:hover {
+		color: orangered;
+		
+	}
+	.bottom-frame {
+		padding-top: 70px; 
+		z-index: 2;
+	}
+	.content {
+		display: none;
+		padding: 20px;
+	}
+	.content.active {
+		display: block;
+	}
+	.logo {
+		margin-left: 0px;
+		width: 70px;
+		height:50px;
+	}
+	.title {
+		margin-right: auto;
+		font-family:'Times New Roman', Times, serif;
+		font-size: 30px;
+		color:orangered;
+		
+	}
+	.highlight-line {
+		position: absolute;
+		bottom: 0;
+		height: 2px;
+		background-color: #fff;
+		transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+	}
+	
+	.bottom-image {
+		width: 100%; 
+		height: 676px; 
+		background-color: rgba(28, 27, 27, 0.5);
+	}
+	.shade{
+		background:rgba(0, 0, 0, 0.422);
+		height:720px;
+		left:0;
+		top:0;
+		bottom:0;
+		right:0;
+		position: absolute;
+
+	}
+   .Data-div{
+   margin-left:30px;
+   font-size:60px;
+   margin-bottom:0;
+}
+  text{
+	padding:10px
+}
+
+  .image-text {
+		position: absolute;
+		top: 40%;
+		left: 20%;
+		transform: translate(-50%, -50%);
+		font-size: 24px;
+		color:white;
+		z-index: 1;
+		padding: 10px 20px;
+	
+  }
+
+ 
+	.abouthead{
+		color:orangered;
+		text-align: center;
+	}
+	.aboutcont{
+		color:black;
+		text-align: center;
+		padding: 0 100px;
+		font-size: 22px; 
+		font-family:'Times New Roman', Times, serif; 
+		line-height: 2.0;
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.service-card {
+		width: 300px;
+		background-color:white;
+		height:440px;
+		margin: 20px;
+		padding: 10px;
+		border-radius: 30px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		font-family:'Times New Roman', Times, serif;
+		font-size: 18px;
+
+	}
+	h2 {
+		text-align: center;
+	}
+	p {
+		text-align: center;
+	}
+	
+
+	.testimonial {
+		display: flex;
+		margin-bottom: 20px;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		padding: 10px;
+		width: 70%;
+		font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		font-size: 20px;
+
+	}
+	.client-image {
+		width: 170px;
+		height: 170px;
+		border-radius: 50%;
+		margin-right: 20px;
+	}
+	.client-info {
+		flex: 1;
+	}
+	.client-name {
+		font-weight: bold;
+		color:orange;
+	}
+	.maxwidth{
+		max-width: 100%;
+	}
+	.process-div{
+		max-width:100%;
+		align-items: center;
+		width: 50%;
+		height: 50%;
+		size: 5px;
+	}
+	.process-con{
+		max-width: 100%;
+		text-align: center;
+	}
+	.conta {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+	.form-group {
+		margin-bottom: 20px;
+	}
+	label {
+		display: block;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	input[type="text"],
+	textarea {
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+	}
+	button {
+		background-color:orangered;
+		color: #fff;
+		border: none;
+		padding: 10px 25px;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	::-webkit-scrollbar {
+width: 12px;
+height:3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: orangered; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: orangered; 
+}
+.men {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family:Arial, Helvetica, sans-serif;
+		
+	}
+	.men a {
+		color:whitesmoke;
+		text-decoration: none;
+		position: relative;
+		padding: 0 15px; 
+		font-family:Georgia, 'Times New Roman', Times, serif;       
+	}
+	.men a:hover{
+		color:black;
+	}
+	.men a:hover {
+		border-bottom: 3px solid black;
+	}
+</style>
+  <body>
+		<div class="maxiwidth">
+		<div class="top-frame">
+			<div class="logo">
+			<img src="logo.jpg" alt="Your Logo" height="50px"></div>
+			<div class="title">
+			<h3>Meliora</h3>
+			</div>
+			<div class="menu">
+				
+				<a href="#" onclick="scrollToSection('home')"><strong>Home</strong></a>
+				<a href="#" onclick="scrollToSection('About')"><strong>About</strong></a>
+				<a href="#" onclick="scrollToSection('services')"><strong>Services</strong></a>
+				<a href="#" onclick="scrollToSection('process')"><strong>Process</strong></a><br><br><br>
+				
+			</div>
+		<div class="men">
+			<a href="#" onclick="regfun()"><h3 style="color: orangered;">Register</h3></a></div>
+			<div class="highlight-line"></div>
+		</div>
+		<div class="bottom-frame">
+			<div class="shade"></div>
+			<img class="bottom-image" src="pro.avif">
+			<!-- "C:\\Users\\PURANDESWARI\\OneDrive\\Desktop\\sirpro\\assets\\landpageimg.jpg" -->
+			<div class="image-text">
+			
+			<h1 style="font-size:10vw">   
+			<p><h2>Report Your Issues Online</h2></p></h1>
+			<p><h4>we'll help you to resolve them</h4></p>
+			<button onclick="logfun()">Get Strated</button>
+		   
+			</div>
+		</div>
+		<div id="About"></div>
+		<div class="abouthead">
+		<h1>ABOUT</h1></div>
+		<div class="aboutcont">
+			<p>The Student Inconvenience Reporting System is a dedicated platform designed to empower students 
+				and enhance their college experience by providing a convenient and efficient means of 
+				reporting problems, concerns, and inconveniences they may encounter while on campus. 
+				This system serves as a bridge between students and college authorities, facilitating
+				 open communication and quick resolution of issues.</p> 
+				 
+			<p>The system is designed with a user-friendly interface to ensure that students of all technical backgrounds can easily navigate and use the platform.
+			   Students can report issues through multiple channels, including text, images, videos, or by simply describing the problem. This flexibility allows for more comprehensive reporting.The system categorizes reported issues, making it easier for college authorities to prioritize and address them efficiently. Common categories may include academic concerns, facilities and maintenance, safety, and more.
+			   Students receive notifications and updates on the status of their reports, keeping them informed about the progress of issue resolution.
+			The platform collects data on reported issues, allowing colleges to analyze trends and patterns, ultimately leading to proactive improvements in campus facilities and services.</p>
+		</div>
+	
+		<br>
+		<br>
+		<div id="services"></div>
+		<h1 style="text-align: center;color:orangered">SERVICES</h1>
+		<div class="container">
+			<div class="service-card">
+				<h2 style="color: rgb(187, 54, 6);">24/7 Reporting</h2>
+				<img src="https://img.freepik.com/free-vector/deadline-concept-illustration_114360-6003.jpg?w=740&t=st=1702736358~exp=1702736958~hmac=6f4677e65bcd4b05f862899b828ede6ef5691fdd7819cccdff630a8717679dc9" alt="24/7 Reporting" height="300px" width="300px"> 
+				<p>Report your issues anytime, day or night.</p>
+			</div>
+			
+			<div class="service-card">
+				<h2 style="color: rgb(187, 54, 6);">Fast Response Time</h2>
+				<img src="https://img.freepik.com/free-vector/screen-addiction-abstract-concept-illustration-digital-overload-information-dependence-smartphone-addiction-screen-addicted-mobile-phone-dependence-mental-disorder_335657-1247.jpg?w=740&t=st=1702736422~exp=1702737022~hmac=e845913064aca54fffcbedb06aff937b460af1ca8895df2d3ada056502f336a5" alt="Fast Response Time" height="300px" width="300px">
+				<p>We respond to your concerns promptly.</p>
+			</div>
+			
+			<div class="service-card">
+				<h2 style="color: rgb(187, 54, 6);">Anonymous Reporting</h2>
+				<img src="https://img.freepik.com/free-vector/phishing-account_23-2148539268.jpg?w=996&t=st=1702736678~exp=1702737278~hmac=f79b11fc85714a6b4f0c7061668f8d861213c31d77abb3a128e31de41b814f75" alt="Anonymous Reporting" height="300px" width="300px">
+				<p>Your identity remains confidential.</p>
+			</div>
+			<div class="service-card">
+				<h2 style="color: rgb(187, 54, 6);">Security</h2>
+				<img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37373.jpg?w=826&t=st=1702737403~exp=1702738003~hmac=df4b16bb3feae543b5fb0d282b5743858ff6802ee20f3e745557ae587086844b" alt="secure" height="300px" width="300px">
+				<p>We Ensure Secure Submission of Student Reports.</p>
+			</div>
+			<div class="service-card">
+				<h2 style="color: rgb(187, 54, 6);">Notification System</h2>
+				<img src="https://img.freepik.com/free-vector/messages-concept-illustration_114360-524.jpg?w=740&t=st=1702737670~exp=1702738270~hmac=ac5746f25debb24b45a9a0da2ee016c2fe131a4b03b56d128723354d57e19c9c" alt="Notification" height="300px" width="300px">
+				<p>We Implement Notification System for Reporting Updates.</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div id="process"></div>
+		<h1 style="text-align: center;color:orangered">PROCESS</h1>
+		<div class="process-con">
+		<img class="process-div" src="processnew.png"></div><br><br>
+		<h1 style="text-align: center; color:orangered">CLIENTS</h1>
+		<div class="container">
+			<div class="testimonial">
+				<img class="client-image" src="client2.jpg" alt="Client 1">
+				<div class="client-info">
+					<p class="client-name">John </p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+						Nullam a metus sit amet ligula feugiat malesuada.<br>
+						Etiam non libero id ipsum malesuada tempus.<br> Suspendisse volutpat libero ut commodo varius.</p>
+				</div>
+			</div>
+			<div class="testimonial">
+				<img class="client-image" src="client1.jpg" alt="Client 2">
+				<div class="client-info">
+					<p class="client-name">siri</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Nullam a metus sit amet ligula feugiat malesuada.<br>Etiam non libero id ipsum malesuada tempus.<br>
+						Suspendisse volutpat libero ut commodo varius.</p>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+		
+		
+	</div>
+	</body>
+		<!--<nav class="navbar-nav navbar-expand-sm bg-dark">
+		<div class="nav-item item1" style="margin-left:3%">
+				<h2 onclick='window.location.reload();' style="cursor:pointer">MELOPILE</h2>
+		</div>
+		<div class="nav-item items" >
+				<a class="nav-link" href="userlogin1.html">User Login</a>
+		</div>
+			<div class="nav-item items" style="margin-right:5%">
+				<a class="nav-link" href="userreg1.html">User Registration</a>
+		</div>
+			<div class="nav-item items">
+				<a class="nav-link" href="adminlogin1.html">ADMIN</a>
+		</div>
+		</nav>-->
+	<!---------------------------------------------------------------------------------------------------------------------->
+<!--<div id="demo" class="carousel slide" data-ride="carousel">-->
+
+  <!-- Indicators -->
+  <!--<ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>-->
+  
+  <!-- The slideshow -->
+  <!--<div class="carousel-inner">
+   
+	<div class="carousel-item active">
+      <img src="comp2.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="comp.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="background.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+ 
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+		
+		<div class="welcome container">
+			<h3>Welcome To Online Complaint System</h3> 
+		
+		
+		<div class="guide">
+			
+				<input type="button" class="btn btn-light form-control" onClick="myfun()" id="butn" value="Click to see guidelines" ">
+		
+			<div id="guidelines" style="display:none">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item list-group-item-dark">
+						If you want to place complaint first of all register yourself in <a href="userreg1.html">User registration</a>
+					</li>
+					<li class="list-group-item list-group-item-dark">
+						After registration Login in to <a href="userlogin1.html">User Login</a>
+					</li>
+					<li class="list-group-item list-group-item-dark">
+						Then set your personal information. And in complaint section select type and sub type of complaint.
+					</li>
+					<li class="list-group-item list-group-item-dark">
+						After writing your complaint submit your complaint and wait for response on it. 
+					</li>
+					<li class="list-group-item list-group-item-dark">
+						You can see your complaint status on your dashboard.
+					</li>
+					<li class="list-group-item list-group-item-dark">
+						If you want to logout there is Logout button at Top-right corner.
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<br /><hr />
+		<div class="copyright">
+			<div class="footer-copyright text-center py-3">
+			© 2019 Copyright:
+    <a href="https://cui.edu.pk/"> cuiwah.edu.pk</a>
+  </div>
+		</div>		
+  </body>-->
+</html>
