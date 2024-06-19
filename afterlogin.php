@@ -108,7 +108,7 @@ if($conn)
             top: 0;
             left: 0;
             right:0;
-            width: 1200%;
+            width: 100%;
             height:14%;
             background-color:black;
             color: #fff;
@@ -305,7 +305,7 @@ if($conn)
     .chatbot-icon {
       cursor: pointer;
 	  position: fixed; 
-      top: 10px; 
+      top: 605px; 
       right: 10px; 
       z-index: 1000;
 	  height: 85px;
@@ -342,6 +342,7 @@ if($conn)
             font-family:Georgia, 'Times New Roman', Times, serif;
             font-size: 30px;
             color:orangered;
+			bottom: 10%
             
         }
         ::-webkit-scrollbar {
@@ -412,6 +413,9 @@ if($conn)
 }
 .buton{
 	color: orange;
+}
+.btn-logout{
+	color:#ffffff;
 }
 </style>
 </head>
@@ -748,6 +752,9 @@ if($conn)
 		<img src="chatbot.jpeg" alt="Chatbot" class="chatbot-icon" id="chatIcon">
 		<!--<img src="chatbot.jpeg" alt="Chatbot Icon" class="chatbot-icon" onclick="toggleChatbot()">-->
         </div>
+		<div style="width:50%" >
+				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="userlogin1.html">Logout</a>
+		</div>
     </div>
 	<div class="container">
         
@@ -761,6 +768,7 @@ if($conn)
                 <button id="sendButton" class="buton">Send</button>
             </div>
         </div>
+		
     </div>
     <!--<div id="chatbotContainer" class="chatbot-container hidden">
      Include the chatbot mini screen HTML content here 

@@ -36,18 +36,31 @@ $compid=$_POST['compid'];
 	.now{
 		display:none;
 	}
+	.logo {
+		margin-left: 0px;
+		width: 70px;
+		height:50px;
+	}
+	.title{
+		color: orangered;
+		margin-right: auto;
+		font-family:'Times New Roman', Times, serif;
+		font-size: 30px;
+		margin-top: 10px;
+	}
 			
   </style>
   </head>
 	<body>
-		<nav class="navbar-nav navbar-expand-sm bg-info" style="margin:0px;padding:0px;">
+		<nav class="navbar-nav navbar-expand-sm bg-black" style="margin:0px;padding:0px;">
 		
-			<div class="nav-item item1" style="margin-left:5%">
-			<img src="admin.png" style="border-radius:15%;margin-left:25%;float:left" width="70px" height="80px">
-					<h3  style="float:left;cursor:pointer;margin:10px 2px 0px 20px;">CS | Admin</h3>
+			<div class="logo">
+			<img src="logo.jpg" alt="Your Logo" height="50px" style="margin-left:05%"></div>
+					<div class="title">
+					<h3 onclick='window.open("index.html");' style="cursor:pointer"><b>Meliora</b></h3></div>
 						
 			</div>
-					<div style="width:90%" >
+					<div style="width:50%" >
 					<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="adminlogin1.html">Logout</a>
 					<a class="btn btn-success" style="float:right;margin:10px;" href="afteradminlogin.php">Back to Dashboard</a>
 			</div>
@@ -59,10 +72,10 @@ $compid=$_POST['compid'];
 			<h5>USER NAME
 				<input type="text" name="user" value="<?php echo $username;?>" class="now">
 				<input type="text" name="complaintnum" value="<?php echo $compid;?>" class="now">
-				<p class="form-control" style="width:25%;display:inline-block;background:#00ffff29;"><?php echo $username;?></p>
+				<p class="form-control" style="width:25%;display:inline-block;background:#fffffff;"><?php echo $username;?></p>
 				COMPLAINT NUMBER
 				
-				<p class="form-control" style="width:15%;display:inline-block;background:#00ffff29;"><?php echo $compid;?></p>
+				<p class="form-control" style="width:15%;display:inline-block;background:#fffffff;"><?php echo $compid;?></p>
 				
 				<hr />Status
 				<select name="status" class="form-control">
@@ -73,7 +86,7 @@ $compid=$_POST['compid'];
 				Enter Remarks here<br />
 				<textarea type="text" name="remark" class="form-control" style="height:200px" placeholder="Enter Remark here to complete this complaint."></textarea>
 				<input type="submit" value="In-progress/Complete this Complaint" class="btn btn-success" style="padding-left:2%;padding-right:2%;margin-left:5%;">
-				<a class="btn btn-light" style="padding-left:2%;padding-right:2%;margin-left:1%;" href="afteradminlogin.php">Back to Portal</a>
+				<a class="btn btn-light" style="padding-left:2%;padding-right:2%;margin-left:1%;" href="afteradminlogin.php"><font color="#ffffff">Back to Portal</a>
 			</h3>
 			</form>
 		</div>
