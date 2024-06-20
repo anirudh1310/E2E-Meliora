@@ -458,10 +458,20 @@ if($conn)
                 // Simple logic for different responses
                 if (userMessage.toLowerCase().includes('hello')) {
                     botMessage = 'Hi there! How can I assist you today?';
+				}else if (userMessage.toLowerCase().includes('hi')) {
+						botMessage = 'Hi there! How can I assist you today?';
                 } else if (userMessage.toLowerCase().includes('how are you')) {
                     botMessage = 'I am just a bot, but I am functioning as expected! How can I help you?';
                 } else if (userMessage.toLowerCase().includes('bye')) {
                     botMessage = 'Goodbye! Have a great day!';
+				} else if (userMessage.toLowerCase().includes('submit a grievance')){
+        			botMessage ='To submit a grievance, please visit the Make Complaint page on your student portal.';
+				} else if (userMessage.toLowerCase().includes('submit a complaint'))  {
+        			botMessage = 'To submit a grievance, please visit the Make Complaint page on your student portal.';
+				} else if (userMessage.toLowerCase().includes('status')) {
+   					botMessage = 'To check the status of your grievance, please navigate to the Inprogress Complaints section.';
+				} else if (userMessage.toLowerCase().includes('help')) {
+    				botMessage = 'For assistance with your grievance, you can contact our support team at support@example.com.';
                 } else {
                     botMessage = 'I am not sure how to respond to that. Can you please rephrase?';
                 }
@@ -749,7 +759,7 @@ if($conn)
         <img src="logo.jpg" alt="Your Logo" height="70px" width="85px"></div>
         <div class="title">
         <h3>Meliora</h3>
-		<img src="chatbot.jpeg" alt="Chatbot" class="chatbot-icon" id="chatIcon">
+		<img src="chat-bot.jpg" alt="chat-bot.jpg" class="chatbot-icon" id="chatIcon">
 		<!--<img src="chatbot.jpeg" alt="Chatbot Icon" class="chatbot-icon" onclick="toggleChatbot()">-->
         </div>
 		<div style="width:50%" >
