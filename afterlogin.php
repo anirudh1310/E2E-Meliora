@@ -92,30 +92,32 @@ if($conn)
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">  
   <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            max-width: 100%;
+			font-family: 'Open Sans', sans-serif; 
+		    max-width: 100%;
             max-height: 100%;
         }
 
         .top-frame {
             /* background: linear-gradient(to bottom left, #cfcf09,rgb(238, 19, 180)); */
-            background:black;
+            background:white;
             position: fixed;
             top: 0;
             left: 0;
             right:0;
             width: 100%;
             height:14%;
-            background-color:black;
+            background-color:white;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center; 
+			filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.703));
            
         }
 
@@ -149,8 +151,8 @@ if($conn)
         .left-menu-item {
             margin-bottom: 20px;
             padding: 17px;
-            background-color: #ddd;
             cursor: pointer;
+			color: black;
         
         }
         #file1,#file2,#file3{
@@ -233,8 +235,8 @@ if($conn)
             background-color:palegoldenrod
         }
         .logo {
-            margin-left: 0px;
-            width: 70px;
+            margin-left: 10px;
+            width: 90px;
         }
 	
         .chat-icon {
@@ -339,10 +341,12 @@ if($conn)
     }
         .title {
             margin-right: auto;
-            font-family:Georgia, 'Times New Roman', Times, serif;
-            font-size: 30px;
-            color:orangered;
-			bottom: 10%
+			font-family: 'Open Sans', sans-serif; 
+            font-size: 28px;
+            font-weight: 800;
+            color: black;
+            text-align: center;
+			cursor: pointer;
             
         }
         ::-webkit-scrollbar {
@@ -370,7 +374,7 @@ if($conn)
     position: absolute;
     color: white;
     font-size: 16px;
-    font-family: Poppins;
+	font-family: 'Open Sans', sans-serif; 
     font-weight: 500;
     line-height: 40px;
     background: transparent;
@@ -458,10 +462,20 @@ if($conn)
                 // Simple logic for different responses
                 if (userMessage.toLowerCase().includes('hello')) {
                     botMessage = 'Hi there! How can I assist you today?';
+				}else if (userMessage.toLowerCase().includes('hi')) {
+						botMessage = 'Hi there! How can I assist you today?';
                 } else if (userMessage.toLowerCase().includes('how are you')) {
                     botMessage = 'I am just a bot, but I am functioning as expected! How can I help you?';
                 } else if (userMessage.toLowerCase().includes('bye')) {
                     botMessage = 'Goodbye! Have a great day!';
+				} else if (userMessage.toLowerCase().includes('submit a grievance')){
+        			botMessage ='To submit a grievance, please visit the Make Complaint page on your student portal.';
+				} else if (userMessage.toLowerCase().includes('submit a complaint'))  {
+        			botMessage = 'To submit a grievance, please visit the Make Complaint page on your student portal.';
+				} else if (userMessage.toLowerCase().includes('status')) {
+   					botMessage = 'To check the status of your grievance, please navigate to the Inprogress Complaints section.';
+				} else if (userMessage.toLowerCase().includes('help')) {
+    				botMessage = 'For assistance with your grievance, you can contact our support team at support@example.com.';
                 } else {
                     botMessage = 'I am not sure how to respond to that. Can you please rephrase?';
                 }
@@ -746,14 +760,16 @@ if($conn)
 
     <div class="top-frame">
         <div class="logo">
-        <img src="logo.jpg" alt="Your Logo" height="70px" width="85px"></div>
+        <img src="logo1.png" alt="Your Logo" height="70px" width="85px"></div>
         <div class="title">
         <h3>Meliora</h3>
-		<img src="chatbot.jpeg" alt="Chatbot" class="chatbot-icon" id="chatIcon">
+		<img src="chat-bot.jpg" alt="chat-bot.jpg" class="chatbot-icon" id="chatIcon">
 		<!--<img src="chatbot.jpeg" alt="Chatbot Icon" class="chatbot-icon" onclick="toggleChatbot()">-->
         </div>
 		<div style="width:50%" >
-				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="userlogin1.html">Logout</a>
+				<div class="left-menu-item" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" onclick="editinfo()">Profile</div>
+				<div class="left-menu-item" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" onclick="makecomplaint()">Register Complaint</div>
+				<div class="left-menu-item" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" onclick="dashboard()"> Complaint status</div>
 		</div>
     </div>
 	<div class="container">
@@ -827,19 +843,6 @@ if($conn)
         </div>
     </div>
 </div>
-
-
-    <div class="bottom-frame">
-        <div class="left-frame">
-            <div class="left-menu-item" onclick="showHome()">Home</div>
-            <div class="left-menu-item" onclick="showHome()">Home</div>
-            <div class="left-menu-item" onclick="dashboard()">Dashboard</div>
-            <div class="left-menu-item" onclick="editinfo()">Profile</div>
-            <div class="left-menu-item" onclick="makecomplaint()">Make Complaint</div>
-            <div class="left-menu-item" onclick="inpro()">Inprogress Complaint</div>
-            <div class="left-menu-item" onclick="completed()">Completed complaints</div>
-            <div class="left-menu-item" onclick="history()">History</div>
-        </div>
        <!-- <div class="right-frame">
             <iframe id="content-frame" width="100%" height="90%" frameborder="0"></iframe>
         </div>
@@ -875,11 +878,10 @@ if($conn)
         }
     </script>-->
     <div class="right-frame">
-    <!--<div id="main" style="width:78%;float:left;" >-->
 			<!----------------------------------------------------------------------------------------DASHBOARD-->
 			
 			<div class="" id="dashboard" style="width:100%;display:block;padding:20px;">
-			<h4 style="color:orangered;">Dashboard<hr/></h4>
+			<h4 style="color:orangered;">Complaint Status<hr/></h4>
 				<div id="file1" onclick="pending()" style="cursor:pointer;">
 					<i class="fa fa-file-text" style=""></i>
 					<p id="file12" style="display:block;font-size:15px;text-align:center;">Pending complaints<div id="pen"><?php echo $pend; ?></div></p>
@@ -923,9 +925,10 @@ if($conn)
             <option>Male</option>
             <option>Female</option> <!-- Corrected typo -->
         </select><br />
+		<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="index.html">Logout</a>
         <input type="submit" class="btn btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;" value="save"><br />
     </form>
-</div>
+</div>	
 
 			
 			<!----------------------------------------------------------------------------------------editinfo-->
@@ -1227,6 +1230,7 @@ if($conn)
     </div>
 	</body>
 </html>
+
         
 
 
