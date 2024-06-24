@@ -763,7 +763,7 @@ if($conn)
 		<!--<img src="chatbot.jpeg" alt="Chatbot Icon" class="chatbot-icon" onclick="toggleChatbot()">-->
         </div>
 		<div style="width:50%" >
-				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="userlogin1.html">Logout</a>
+				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="index.html">Logout</a>
 		</div>
     </div>
 	<div class="container">
