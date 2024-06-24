@@ -95,6 +95,7 @@ if($conn)
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">  
   <style>
         body {
+			overflow: hidden;
             margin: 0;
             padding: 0;
 			font-family: 'Open Sans', sans-serif; 
@@ -250,10 +251,10 @@ if($conn)
 
         .chat-panel {
             position: fixed;
-            top: 0;
+            top: 95;
             right: -350px; /* Initially hidden off the screen */
             width: 350px;
-            height: 100%;
+            height: 68%;
             background-color: #f4f4f4;
             box-shadow: -2px 0 5px rgba(0,0,0,0.5);
             transition: right 0.3s ease;
@@ -263,7 +264,7 @@ if($conn)
         }
 
         .chat-panel.visible {
-            right: 0; /* Slide in when visible */
+            right: 10; /* Slide in when visible */
         }
 
         .chat-header {
